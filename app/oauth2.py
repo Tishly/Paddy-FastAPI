@@ -8,8 +8,8 @@ from .config import settings
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl='login')
 
-SECRET_KEY = settings.secret_key #"ajkbirekn1F97FFBA63D7780nsngsbdscsm9A118A55yudfabsbksnagdujkfhsdvjabajksdgabasdkjasaajnlsa30E2C624C73E61BF22DB8F124F5"
-ALGORITHM = settings.database_algorithm #"HS256"
+SECRET_KEY = settings.secret_key
+ALGORITHM = settings.database_algorithm
 TOKEN_EXPIRE_DAYS = 4
 
 def create_access_token(data: dict):
