@@ -33,7 +33,7 @@ mangum==0.17.0
 orjson==3.8.3
 passlib==1.7.4
 promise==2.3
-psycopg2==2-2.9.5
+psycopg2==2.9.5
 pyasn1==0.4.8
 pycodestyle==2.7.0
 pycparser==2.21
