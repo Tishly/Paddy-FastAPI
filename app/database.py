@@ -11,16 +11,16 @@ SQLALCHEMY_DATABASE_URL = 'postgresql://paddy_user:WcBkrp5xE54mUGws2rFKFRLebHd2j
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
-# SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
 
-# def get_db():
-#     db = SessionLocal()
-#     try:
-#         yield db
-#     finally:
-#         db.close()
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 # while True:
    # try:
