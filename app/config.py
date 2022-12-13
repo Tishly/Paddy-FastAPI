@@ -4,9 +4,9 @@ from dotenv import dotenv_values
 from pathlib import Path
 import os
 
-load_dotenv()
-env_path = Path('..')/'.env'
-load_dotenv(dotenv_path=env_path)
+# load_dotenv()
+# env_path = Path('..')/'.env'
+# load_dotenv(dotenv_path=env_path)
 
 class Settings():
     database_hostname = os.getenv("DATABASE_HOSTNAME")

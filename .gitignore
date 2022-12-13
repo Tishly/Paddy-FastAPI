@@ -2,3 +2,4 @@
 *.pyc
 __pycache__
 venv
+postgres://paddy_user:WcBkrp5xE54mUGws2rFKFRLebHd2jRA7@dpg-cebp98da49965ve4odug-a/paddy
