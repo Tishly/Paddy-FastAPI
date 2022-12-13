@@ -11,16 +11,16 @@ SQLALCHEMY_DATABASE_URL = 'postgres://paddy_user:WcBkrp5xE54mUGws2rFKFRLebHd2jRA
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+# SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-Base = declarative_base()
+# Base = declarative_base()
 
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+# def get_db():
+#     db = SessionLocal()
+#     try:
+#         yield db
+#     finally:
+#         db.close()
 
 # while True:
    # try:
@@ -33,3 +33,13 @@ def get_db():
     #     time.sleep(20)
     #     print("Connection to database failed")
     #     print("Error: ", error)
+
+    # Import the necessary modules
+# from sqlalchemy import create_engine
+
+# Set up the connection to the database
+# db_string = "postgres://username:password@host:port/database_name"
+# engine = create_engine(db_string)
+
+# Connect to the database
+conn = engine.connect()
