@@ -5,12 +5,12 @@ from ..database import engine, get_db
 from typing import List
 
 router = APIRouter(
-    prefix="/users",
+    # prefix="/users",
     tags=['Users']
 )
 
 """Create User Section"""
-@router.post("/", status_code=status.HTTP_201_CREATED, response_model=schemas.UserOutput)
+@router.post("/users", status_code=status.HTTP_201_CREATED, response_model=schemas.UserOutput)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     hashed_password = utils.hash(user.password)
     user.password = hashed_password
@@ -27,7 +27,7 @@ def get_user(db: Session = Depends(get_db)):
     #     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"There is no user with id: {id}")
     return user
 
-@router.get("/{id}", response_model=schemas.UserOutput)
+@router.get("/users/{id}", response_model=schemas.UserOutput)
 def get_user(id: int, db: Session = Depends(get_db)):
     user = db.query(models.User).filter(models.User.id == id).first()
     if not user:
