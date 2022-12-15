@@ -56,9 +56,20 @@ def save_user(user: str = schemas.UserCollect, db: Session = Depends(get_db)):
     """"""
     user_email = db.query(models.Tester).filter(models.Tester.email==user.email).first()
     if not user_email:
+
         new_user = models.Tester(**user.dict())
         db.add(new_user)
         db.commit()
         db.refresh(new_user)
 
     return user_email
+
+# @router.post("/users", status_code=status.HTTP_201_CREATED, response_model=schemas.UserOutput)
+# def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
+#     hashed_password = utils.hash(user.password)
+#     user.password = hashed_password
+#     new_user = models.User(**user.dict())
+#     db.add(new_user)
+#     db.commit()
+#     db.refresh(new_user)
+#     return new_user

@@ -7,7 +7,7 @@ from psycopg2.extras import RealDictCursor
 import time
 
 
-SQLALCHEMY_DATABASE_URL = 'postgresql://paddy_user:WcBkrp5xE54mUGws2rFKFRLebHd2jRA7@dpg-cebp98da49965ve4odug-a/paddy'
+SQLALCHEMY_DATABASE_URL = 'postgres://paddy_paiq_user:Sv2VrGPOnA7XqBpOmM2TTuRgtz4IXhKX@dpg-ced9c2sgqg45ht8n580g-a/paddy_paiq'
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
