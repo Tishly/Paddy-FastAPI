@@ -36,3 +36,11 @@ class User(Base):
     password = Column(String)
     created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now()"))
     post = relationship("Post", back_populates="owner")
+
+class Tester(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, nullable=False, primary_key=True)
+    email = Column(String, unique=True)
+    password = Column(String)
+    created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now()"))

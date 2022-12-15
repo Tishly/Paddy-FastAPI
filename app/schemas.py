@@ -10,6 +10,8 @@ class PostBase(BaseModel):
 class PostCreate(PostBase):
     pass
 
+class UserCollect(BaseModel):
+    email: EmailStr
 
 class UserOutput(BaseModel):
     id: int
@@ -26,13 +28,13 @@ class Post(PostBase):
     class Config:
         orm_mode = True
 
-class UserCreate(BaseModel):
-    email:EmailStr
-    password: str
+# class UserCreate(BaseModel):
+#     email:EmailStr
+#     password: str
 
-class UserLogin(BaseModel):
-    email: EmailStr
-    password: str
+# class UserLogin(BaseModel):
+#     email: EmailStr
+#     password: str
    
 
 class Token(BaseModel):
