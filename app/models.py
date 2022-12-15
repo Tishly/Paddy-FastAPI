@@ -38,7 +38,7 @@ class User(Base):
     post = relationship("Post", back_populates="owner")
 
 class Tester(Base):
-    __tablename__ = "users"
+    __tablename__ = "testers"
 
     id = Column(Integer, nullable=False, primary_key=True)
     email = Column(String, unique=True)
