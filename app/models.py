@@ -32,7 +32,7 @@ class User(Base):
     __tablename__ = "users"
 
     id = Column(Integer, nullable=False, primary_key=True)
-    email = Column(String, nullable=False, unique=True)
-    password = Column(String, nullable=False)
+    email = Column(String, unique=True)
+    password = Column(String)
     created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text("now()"))
     post = relationship("Post", back_populates="owner")
