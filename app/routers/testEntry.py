@@ -51,8 +51,14 @@ def get_one_entry(email: str, id: int, db: Session = Depends(get_db)):
 
     return entry
 
-@router.post("/tester", response_model=schemas.Login)
+@router.post("/tester", response_model=schemas.UserCollect)
 def save_user(user: str = schemas.UserCollect, db: Session = Depends(get_db)):
+    """"""
     user_email = db.query(models.Tester).filter(models.Tester.email==user.email).first()
+    if not user_email:
+        new_user = models.Tester(**user.dict())
+        db.add(new_user)
+        db.commit()
+        db.refresh(new_user)
 
     return user_email
